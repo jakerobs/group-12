@@ -16,7 +16,7 @@ var categories = function(){
                 var categoryTwoId = data[0].id;
                 var categoryThreeId = data[0].id;
                 var categoryFourId = data[0].id;
-                return categoryOneId, categoryTwoId, categoryThreeId, categoryFourId;
+                categoryIds(categoryOneId, categoryTwoId, categoryThreeId, categoryFourId);
             });
         } else{
             //change this alert to be modal later
@@ -27,6 +27,7 @@ var categories = function(){
 
 var categoryIds = function(categoryOneId, categoryTwoId, categoryThreeId, categoryFourId) {
     //do something with the ids
+    return categoryOneId, categoryTwoId, categoryThreeId, categoryFourId;
 };
 
 
@@ -34,21 +35,29 @@ var categoryIds = function(categoryOneId, categoryTwoId, categoryThreeId, catego
 //take fetched information and update the quizpage
 var gradeButtonClickHandler = function(event){
     console.log(event.target.parentNode.id);
+
+    //get difficulty rating of button
+    var difficulty = event.target.getAttribute("data-difficulty");
+
     if (event.target.parentNode.id === "category-1"){
         //do this
         console.log(categoryOneId);
+        //call questionHandlerFunction with category id and difficulty level
     } 
     else if (event.target.parentNode.id === "category-2"){
         //do this
         console.log(categoryTwoId);
+        //call questionHandlerFunction with category id and difficulty level
     }
     else if (event.target.parentNode.id === "category-3"){
         //do this
         console.log(categoryThreeId);
+        //call questionHandlerFunction with category id and difficulty level
     }
     else if (event.target.parentNode.id === "category-4"){
         //do this
         console.log(categoryFourId);
+        //call questionHandlerFunction with category id and difficulty level
     }
 };
 

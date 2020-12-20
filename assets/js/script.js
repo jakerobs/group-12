@@ -33,30 +33,37 @@ var categories = function(){
 var gradeButtonClickHandler = function(event){
     console.log(event.target.parentNode.id);
     loadIds();
-    
+
     //get difficulty rating of button
     var difficulty = event.target.getAttribute("data-difficulty");
 
     if (event.target.parentNode.id === "category-1"){
-        //do this
-        console.log(categoryIds[0]);
         //call questionHandlerFunction with category id and difficulty level
+        questionHandler(categoryIds[0],difficulty);
     } 
     else if (event.target.parentNode.id === "category-2"){
-        //do this
-        console.log(categoryIds[1]);
         //call questionHandlerFunction with category id and difficulty level
+        questionHandler(categoryIds[1],difficulty);
     }
     else if (event.target.parentNode.id === "category-3"){
-        //do this
-        console.log(categoryIds[2]);
         //call questionHandlerFunction with category id and difficulty level
+        questionHandler(categoryIds[2],difficulty);
     }
     else if (event.target.parentNode.id === "category-4"){
-        //do this
-        console.log(categoryIds[3]);
         //call questionHandlerFunction with category id and difficulty level
+        questionHandler(categoryIds[3],difficulty);
     }
+};
+
+var questionHandler = function(id,difficulty){
+    fetch("http://jservice.io/api/clues?category=" + id + "&value=" + difficulty).then(function(response) {
+            if(response.ok) {
+                response.json().then(function(data) {
+                    console.log(data);
+                    //find response that fits difficulty requirement
+                });
+            }
+        });
 };
 
 //function to save values of the category ids

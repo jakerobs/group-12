@@ -5,22 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivia King</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bungee+Outline&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
-    <main>
-        <!-- head font for page -->
-        <h1>Trivia Kings</h1>
-        <!-- buttons to interact with page -->
-        <button id="start-btn" class="start-btn btn" type="submit"><a href="./category.html">Start Game</a></button>
-        <button class="leaderboard-btn btn" type="submit">Leaderboard</button>
-        <!-- button to create avatar which we probably dont need -->
-        <button class="avatar-btn btn" type="submit">Avatar</button>
+    <main class="main-page">
+        <div class="container">
+            <!-- head font for page -->
+            <h1 class="hero-text main-header">Trivia Kings</h1>
+            <!-- buttons to interact with page -->
+            <div class="columns">
+                <button id="start-btn" class="start-btn button column is-one-fifth" type="submit"><a
+                        href="./category.html">Start
+                        Game</a></button>
+                <button class="leaderboard-btn button column is-one-fifth" type="submit"><a
+                        href="./leaderboard.html">Leaderboard</a></button>
+                <button class="avatar-btn button column is-one-fifth" type="submit">Avatar</button>
+            </div>
+        </div>
     </main>
-    
+
     <!-- javascript link -->
     <script src="./assets/js/landingpagescript.js"></script>
 </body>
+
 </html>

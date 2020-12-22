@@ -5,16 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivia Time</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bungee+Outline&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
-    <main>
+    <main class="container">
+        <div class="level">
         <!-- Current score of quiz -->
-        <h4 class="current-score">Score: </h4>
+        <h4 class="current-score level-left">Score: </h4>
         <!-- timer for tivia, add progress bar instead maybe. Could be cooler -->
-        <h4 class="countdown-timer">Time Left: </h4>
+        <h4 class="countdown-timer level-right">Time Left: </h4>
+        </div>
+        <hero class="hero">
+            <h1 class="hero-text">Trivia Kings</h1>
+        </hero>
 
         <!-- display category -->
         <h2 id="trivia-categories"></h2>
@@ -24,8 +31,8 @@
 
         <!-- user input box -->
         <form id="user-form" class="container">
-            <input name="answer" id="answer" type="text" autofocus="true" class="answer-box" placeholder="Type Your Answer Here" />
-            <button type="submit" class="btn">Submit</button>
+            <input name="answer" id="answer" type="text" autofocus="true" class="answer-box input" placeholder="Type Your Answer Here" />
+            <button type="submit" class="button">Submit</button>
         </form>
         <a href="./category.html">Return</a>
 

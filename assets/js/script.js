@@ -42,19 +42,19 @@ var gradeButtonClickHandler = function (event) {
     //get difficulty rating of button
     var difficulty = event.target.getAttribute("data-difficulty");
 
-    if (event.target.parentNode.id === "category-1") {
+    if (event.target.parentNode.id === "category-1 column") {
         //call questionHandlerFunction with category id and difficulty level
         questionHandler(categoryIds[0], difficulty);
     }
-    else if (event.target.parentNode.id === "category-2") {
+    else if (event.target.parentNode.id === "category-2 column") {
         //call questionHandlerFunction with category id and difficulty level
         questionHandler(categoryIds[1], difficulty);
     }
-    else if (event.target.parentNode.id === "category-3") {
+    else if (event.target.parentNode.id === "category-3 column") {
         //call questionHandlerFunction with category id and difficulty level
         questionHandler(categoryIds[2], difficulty);
     }
-    else if (event.target.parentNode.id === "category-4") {
+    else if (event.target.parentNode.id === "category-4 column") {
         //call questionHandlerFunction with category id and difficulty level
         questionHandler(categoryIds[3], difficulty);
     }

@@ -8,7 +8,8 @@ var getQuestionData = function(){
     var categoryQuestion = urlParams.get("categoryQuestion");
     var categoryAnswer = urlParams.get("categoryAnswer");
 
-    document.querySelector("#trivia-question").textContent = categoryQuestion;
+    document.querySelector("#trivia-question").textContent = "Question: " + categoryQuestion;
+    document.querySelector("#trivia-categories").textContent = "The category is: " + categoryTitle;
     return categoryTitle, categoryAnswer;
 };
 getQuestionData();

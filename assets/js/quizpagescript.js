@@ -1,3 +1,5 @@
+var userAnswer = document.querySelector("#answer").textContent;
+
 var getQuestionData = function(){
     //get question data from url
     var queryString = window.location.search;

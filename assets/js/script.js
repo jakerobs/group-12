@@ -1,6 +1,5 @@
 var gradeButtonEl = document.querySelectorAll("#btn-grade");
 
-
 //fetch call to get random categories and assign them to category headers
 var categories = function () {
     var min = Math.ceil(1);
@@ -15,11 +14,17 @@ var categories = function () {
                 document.querySelector("#category-two").textContent = data[1].title;
                 document.querySelector("#category-three").textContent = data[2].title;
                 document.querySelector("#category-four").textContent = data[3].title;
+                //save category ids
                 var categoryOneId = data[0].id;
                 var categoryTwoId = data[1].id;
                 var categoryThreeId = data[2].id;
                 var categoryFourId = data[3].id;
-                saveIds(categoryOneId, categoryTwoId, categoryThreeId, categoryFourId);
+                //save category titles
+                var titleOne = data[0].title;
+                var titleTwo = data[1].title;
+                var titleThree = data[2].title;
+                var titleFour = data[3].title;
+                saveIds(categoryOneId, categoryTwoId, categoryThreeId, categoryFourId,titleOne,titleTwo,titleThree,titleFour);
             });
         } else {
             //change this alert to be modal later
@@ -72,39 +77,33 @@ var questionHandler = function (id, difficulty) {
 };
 
 //function to save values of the category ids
-var saveIds = function (categoryOneId, categoryTwoId, categoryThreeId, categoryFourId) {
+var saveIds = function (categoryOneId, categoryTwoId, categoryThreeId, categoryFourId,titleOne,titleTwo,titleThree,titleFour) {
     //assign ids to array
     var categoryIds = [categoryOneId, categoryTwoId, categoryThreeId, categoryFourId];
+    //assign titles to array
+    var categoryTitles = [titleOne,titleTwo,titleThree,titleFour];
     //save array to storage
     localStorage.setItem("categoryIds", JSON.stringify(categoryIds));
+    localStorage.setItem("categoryTitles",JSON.stringify(categoryTitles));
 };
 
 //function to load values of the category ids found;
 var loadIds = function () {
     categoryIds = JSON.parse(localStorage.getItem("categoryIds"));
+    categoryTitles = JSON.parse(localStorage.getItem("categoryTitles"));
     if (!categoryIds) {
         categories();
     }
-
-    return categoryIds;
+    else {
+        document.querySelector("#category-one").textContent = categoryTitles[0];
+        document.querySelector("#category-two").textContent = categoryTitles[1];
+        document.querySelector("#category-three").textContent = categoryTitles[2];
+        document.querySelector("#category-four").textContent = categoryTitles[3];
+    }
 };
-
-var startNewGame = function () {
-    localStorage.removeItem("categoryIds");
-    loadIds();
-}
-
-
-
-//autocorrect fetch
-//update input box with fetch value
-
-//add functioning to landing page
-
 
 gradeButtonEl.forEach(function (el) {
     el.addEventListener("click", gradeButtonClickHandler);
 });
 
-//run once the category page is opened
-startNewGame();
+loadIds();

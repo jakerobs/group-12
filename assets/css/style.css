@@ -95,7 +95,7 @@
     width: 100%;
 }
 .start-btn,.leaderboard-btn,.avatar-btn{
-    margin-top: 10px;
+    margin-top: 20px;
     color: white;
 }
 .start-btn a,.leaderboard-btn a,.avatar-btn a{
@@ -111,5 +111,22 @@
     background-color: var(--fourth-color);
 }
 .avatar-btn{
+    background-color: var(--secondary-color);
+}
+
+/* style quiz page */
+.qpage-category{
+    font-size: 27px;
+    padding: 1rem 0 0.25rem 0;
+    margin-top: 18vh;
+}
+.qpage-trivia-questions{
+    font-size: 30px;
+    padding-top: 0.25rem;
+}
+.answer-box,.submit-btn{
+    margin-top: 1.5rem;
+}
+.submit-btn{
     background-color: var(--secondary-color);
 }

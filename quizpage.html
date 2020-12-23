@@ -22,20 +22,28 @@
         <hero class="hero">
             <h1 class="hero-text">Trivia Kings</h1>
         </hero>
-
-        <!-- display category -->
-        <h2 id="trivia-categories"></h2>
-
-        <!-- Questions asked here -->
-        <h2 class="trivia-questions" id="trivia-question">Question Placeholder</h2>
+        <div class="columns">
+            <!-- display category -->
+            <h2 class="qpage-category column" id="trivia-categories"></h2>
+        </div>
+        <div class="columns">
+            <!-- Questions asked here -->
+            <h2 class="qpage-trivia-questions column" id="trivia-question">Question Placeholder</h2>
+        </div>
 
         <!-- user input box -->
-        <form id="user-form" class="container">
-            <input name="answer" id="answer" type="text" autofocus="true" class="answer-box input"
-                placeholder="Type Your Answer Here" />
-            <button type="submit" class="button">Submit</button>
-        </form>
-        <a href="./category.html">Return</a>
+        <div class="columns">
+            <form id="user-form" class="columns">
+                <input name="answer" id="answer" type="text" autofocus="true"
+                    class="answer-box input column is-four-fifths" placeholder="Type Your Answer Here" />
+                <button type="submit" class="button submit-btn column">Submit</button>
+            </form>
+        </div>
+        <div class="columns" id="answer-check">
+        </div>
+        <div class="columns">
+            <a class="column" href="./category.html">Return</a>
+        </div>
 
     </main>
     <!-- javascript link -->

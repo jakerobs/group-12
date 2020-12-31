@@ -70,7 +70,7 @@ var questionHandler = function (id, difficulty) {
                 categoryQuestion = data[0].question;
                 categoryAnswer = data[0].answer;
                 console.log(categoryTitle, categoryQuestion, categoryAnswer);
-                window.location.replace("./quizpage.html?categoryTitle=" + categoryTitle + "&categoryQuestion=" + categoryQuestion + "&categoryAnswer=" + categoryAnswer);
+                window.location.replace("./quizpage.html?categoryTitle=" + categoryTitle + "&categoryQuestion=" + categoryQuestion + "&categoryAnswer=" + categoryAnswer + "&difficulty=" + difficulty);
             });
         }
     });
@@ -91,6 +91,15 @@ var saveIds = function (categoryOneId, categoryTwoId, categoryThreeId, categoryF
 var loadIds = function () {
     categoryIds = JSON.parse(localStorage.getItem("categoryIds"));
     categoryTitles = JSON.parse(localStorage.getItem("categoryTitles"));
+    score = JSON.parse(localStorage.getItem("score"));
+    //assign scores to page
+    if (!score){
+        document.querySelector("#current-score").textContent = "Score: 0";
+    }
+    else {
+        document.querySelector("#current-score").textContent = "Score: " + score;
+    }
+    //assign categories to page
     if (!categoryIds) {
         categories();
     }

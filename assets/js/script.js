@@ -38,6 +38,9 @@ var categories = function () {
 var gradeButtonClickHandler = function (event) {
     //console.log(event.target.parentNode.id);
     loadIds();
+    
+    // // mute buttons during game after they are clicked
+    // document.getElementById(event.target.id).classList.add("disabled");
 
     //get difficulty rating of button
     var difficulty = event.target.getAttribute("data-difficulty");

@@ -57,6 +57,9 @@
     text-align: center;
     justify-content: center;
 }
+.disabled{
+    background-color: grey;
+}
 
 /* style category headers on category page */
 .category-header{

@@ -97,7 +97,7 @@ var loadIds = function () {
     score = JSON.parse(localStorage.getItem("score"));
     //assign scores to page
     if (!score){
-        document.querySelector("#current-score").textContent = "Score: 0";
+        document.querySelector("#current-score").textContent = "Score: " + 0;
     }
     else {
         document.querySelector("#current-score").textContent = "Score: " + score;

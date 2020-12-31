@@ -31,8 +31,6 @@ var formSubmitHandler = function (event) {
 var checkAnswer = function (userAnswerEl) {
     categoryAnswerLower = categoryAnswer.toLowerCase();
     userAnswerLower = userAnswerEl.toLowerCase();
-    // var categoryAnswerLower = categoryAnswer.toLowerCase;
-    // var userAnswerLower = userAnswerEl.toLowerCase;
 
     if (userAnswerLower === categoryAnswerLower) {
         console.log("Correct Answer");
@@ -101,12 +99,11 @@ timer(
     },
     function () { // when finished, return to question selection page. 
         console.log("Timer complete!");
-        // mute these things to help with testing
-        // //add score to the value of the replaced html
-        // setTimeout(function() {
-        //     //bring user back to category page after timer displays it is over
-        //     window.location.replace("./category.html")
-        // },1000);
+        //add score to the value of the replaced html
+        setTimeout(function() {
+            //bring user back to category page after timer displays it is over
+            window.location.replace("./category.html")
+        },1000);
     }
 )
 

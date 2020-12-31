@@ -24,7 +24,7 @@ var categories = function () {
                 var titleTwo = data[1].title;
                 var titleThree = data[2].title;
                 var titleFour = data[3].title;
-                saveIds(categoryOneId, categoryTwoId, categoryThreeId, categoryFourId,titleOne,titleTwo,titleThree,titleFour);
+                saveIds(categoryOneId, categoryTwoId, categoryThreeId, categoryFourId, titleOne, titleTwo, titleThree, titleFour);
             });
         } else {
             //change this alert to be modal later
@@ -38,7 +38,7 @@ var categories = function () {
 var gradeButtonClickHandler = function (event) {
     //console.log(event.target.parentNode.id);
     loadIds();
-    
+
     // // mute buttons during game after they are clicked
     // document.getElementById(event.target.id).classList.add("disabled");
 
@@ -69,25 +69,31 @@ var questionHandler = function (id, difficulty) {
         if (response.ok) {
             response.json().then(function (data) {
                 console.log(data);
-                categoryTitle = data[0].category.title;
-                categoryQuestion = data[0].question;
-                categoryAnswer = data[0].answer;
-                console.log(categoryTitle, categoryQuestion, categoryAnswer);
-                window.location.replace("./quizpage.html?categoryTitle=" + categoryTitle + "&categoryQuestion=" + categoryQuestion + "&categoryAnswer=" + categoryAnswer + "&difficulty=" + difficulty);
+                if (!data.length) {
+                    difficulty = difficulty - 100;
+                    questionHandler(id,difficulty);
+                }
+                else {
+                    categoryTitle = data[0].category.title;
+                    categoryQuestion = data[0].question;
+                    categoryAnswer = data[0].answer;
+                    console.log(categoryTitle, categoryQuestion, categoryAnswer);
+                    window.location.replace("./quizpage.html?categoryTitle=" + categoryTitle + "&categoryQuestion=" + categoryQuestion + "&categoryAnswer=" + categoryAnswer + "&difficulty=" + difficulty);
+                }
             });
         }
     });
 };
 
 //function to save values of the category ids
-var saveIds = function (categoryOneId, categoryTwoId, categoryThreeId, categoryFourId,titleOne,titleTwo,titleThree,titleFour) {
+var saveIds = function (categoryOneId, categoryTwoId, categoryThreeId, categoryFourId, titleOne, titleTwo, titleThree, titleFour) {
     //assign ids to array
     var categoryIds = [categoryOneId, categoryTwoId, categoryThreeId, categoryFourId];
     //assign titles to array
-    var categoryTitles = [titleOne,titleTwo,titleThree,titleFour];
+    var categoryTitles = [titleOne, titleTwo, titleThree, titleFour];
     //save array to storage
     localStorage.setItem("categoryIds", JSON.stringify(categoryIds));
-    localStorage.setItem("categoryTitles",JSON.stringify(categoryTitles));
+    localStorage.setItem("categoryTitles", JSON.stringify(categoryTitles));
 };
 
 //function to load values of the category ids found;
@@ -96,7 +102,7 @@ var loadIds = function () {
     categoryTitles = JSON.parse(localStorage.getItem("categoryTitles"));
     score = JSON.parse(localStorage.getItem("score"));
     //assign scores to page
-    if (!score){
+    if (!score) {
         document.querySelector("#current-score").textContent = "Score: " + 0;
     }
     else {

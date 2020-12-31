@@ -57,6 +57,9 @@
     text-align: center;
     justify-content: center;
 }
+.disabled{
+    background-color: grey;
+}
 
 /* style category headers on category page */
 .category-header{
@@ -128,5 +131,5 @@
     margin-top: 1.5rem;
 }
 .submit-btn{
-    background-color: var(--secondary-color);
+    background-color: var(--fifth-color);
 }

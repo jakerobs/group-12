@@ -59,6 +59,7 @@
 }
 .disabled{
     background-color: grey;
+    pointer-events: none;
 }
 
 /* style category headers on category page */

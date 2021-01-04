@@ -134,3 +134,15 @@
 .submit-btn{
     background-color: var(--fifth-color);
 }
+
+/* style end game modal */
+.modal{
+    display: flex;
+    position: absolute;
+    background-color: rgba(248, 248, 248, 0.9);
+    font-size: 40px;
+}
+.modal-btn{
+    margin-top: 10px;
+    padding: 12px 25px;
+}

@@ -158,6 +158,41 @@ var loadIds = function () {
 
 var endGame = function () {
     console.log("done");
+    //create modal
+    var modalEl = document.createElement("div");
+    modalEl.classList.add("modal")
+    //get final score
+    var finalScore = JSON.parse(localStorage.getItem("score"));
+    //create score element and add text
+    var modalScoreEl = document.createElement("h3");
+    modalScoreEl.textContent = "Final Score: " + finalScore;
+    //append score element to modal
+    modalEl.appendChild(modalScoreEl);
+
+    //create div element to hold buttons
+    var buttonHolderEl = document.createElement("div");
+    buttonHolderEl.classList.add("columns");
+    //add button to return home
+    var homeButtonEl = document.createElement("a");
+    homeButtonEl.textContent = "Home";
+    homeButtonEl.type = "submit";
+    homeButtonEl.classList.add("button","avatar-btn","column","modal-btn");
+    homeButtonEl.setAttribute("href","./landingpage.html");
+    //append button to button holder
+    buttonHolderEl.appendChild(homeButtonEl);
+
+    //add leaderboard button
+    var leaderButtonEl = document.createElement("a");
+    leaderButtonEl.textContent = "LeaderBoards";
+    leaderButtonEl.type = "submit";
+    leaderButtonEl.classList.add("button","start-btn","column","modal-btn");
+    leaderButtonEl.setAttribute("href","./leaderboard.html");
+    //append to button holder
+    buttonHolderEl.appendChild(leaderButtonEl);
+    //append button holder to modal
+    modalEl.appendChild(buttonHolderEl);
+    //append modal to page
+    document.querySelector("#end-game").appendChild(modalEl);
 };
 
 gradeButtonEl.forEach(function (el) {

@@ -14,6 +14,17 @@ document.querySelector("#trivia-categories").textContent = "The category is: " +
 
 console.log(categoryAnswer);
 
+//add value to end of clickedButton array to end game once all buttons are clicked
+clickedButtons = JSON.parse(localStorage.getItem("clickedButtons"));
+console.log(clickedButtons);
+//split clicked buttons list 
+clickedButtonsList = clickedButtons.split(',');
+
+if (clickedButtonsList.length === 20) {
+    clickedButtonsList = clickedButtonsList + ",done"
+    localStorage.setItem("clickedButtons",JSON.stringify(clickedButtonsList));
+}
+
 var formSubmitHandler = function (event) {
     event.preventDefault();
 

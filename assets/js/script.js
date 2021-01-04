@@ -140,12 +140,24 @@ var loadIds = function () {
     //add mute class to buttons that have already been clicked
     clickedButtons = JSON.parse(localStorage.getItem("clickedButtons"));
     if (clickedButtons) {
+        //split clicked buttons list 
         clickedButtonsList = clickedButtons.split(',');
-        console.log(clickedButtonsList);
+
+        //end game if all buttons have been clicked
+        if (clickedButtonsList.length === 21) {
+            endGame();
+            return;
+        }
+
+        //assign all clicked buttons list elements the class of disabled
         for ( var i = 0; i < clickedButtonsList.length; i++) {
             document.querySelector("#" + clickedButtonsList[i]).classList.add("disabled");
         };
-    };
+    }
+};
+
+var endGame = function () {
+    console.log("done");
 };
 
 gradeButtonEl.forEach(function (el) {

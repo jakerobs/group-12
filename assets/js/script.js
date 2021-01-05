@@ -9,7 +9,6 @@ var categories = function () {
         if (response.ok) {
             response.json().then(function (data) {
                 //replace text data on categories page with new categories
-                console.log(data);
                 document.querySelector("#category-one").textContent = data[0].title;
                 document.querySelector("#category-two").textContent = data[1].title;
                 document.querySelector("#category-three").textContent = data[2].title;
@@ -86,7 +85,6 @@ var questionHandler = function (id, difficulty) {
     fetch("http://jservice.io/api/clues?category=" + id + "&value=" + difficulty).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
-                console.log(data);
                 if (!data.length) {
                     difficulty = difficulty - 100;
                     questionHandler(id, difficulty);
@@ -95,7 +93,6 @@ var questionHandler = function (id, difficulty) {
                     categoryTitle = data[0].category.title;
                     categoryQuestion = data[0].question;
                     categoryAnswer = data[0].answer;
-                    console.log(categoryTitle, categoryQuestion, categoryAnswer);
                     window.location.replace("./quizpage.html?categoryTitle=" + categoryTitle + "&categoryQuestion=" + categoryQuestion + "&categoryAnswer=" + categoryAnswer + "&difficulty=" + difficulty);
                 }
             });
@@ -157,7 +154,6 @@ var loadIds = function () {
 };
 
 var endGame = function () {
-    console.log("done");
     //create modal
     var modalEl = document.createElement("div");
     modalEl.classList.add("modal")

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
     <title>Trivia Kings</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bungee+Outline&display=swap" rel="stylesheet">
@@ -17,12 +17,12 @@
             <!-- empty element to force score to right side-->
             <h4 class="level-left"></h4>
             <!-- Current score of quiz -->
-            <h4 id="current-score" class="level-right">Score: 0</h4>
+            <h4 id="current-score" class="level-right margin-left">Score: 0</h4>
         </div>
         <!-- progress bar timer-->
         <div class="container">
-            <h4 class="countdown-timer control heading">Time Left: </h4>
-            <progress class="progress is-primary is-large" value="0" max="30" id="progress"></progress>
+            <h4 class="countdown-timer control heading margin-left">Time Left: </h4>
+            <progress class="progress is-primary is-medium" value="0" max="30" id="progress"></progress>
         </div>
         <hero class="hero">
             <h1 class="hero-text">Trivia Kings</h1>
@@ -37,13 +37,13 @@
         </div>
 
         <!-- user input box -->
-        <div class="columns">
-            <form id="user-form" class="columns">
-                <input name="answer" id="answer" type="text" autofocus="true"
-                    class="answer-box input column is-four-fifths" placeholder="Type Your Answer Here" />
-                <button type="submit" class="button submit-btn column">Submit</button>
-            </form>
-        </div>
+        <form id="user-form" class="columns">
+            <input name="answer" id="answer" type="text" autofocus="true"
+                class="answer-box input column is-four-fifths-mobile is-four-fifths-tablet"
+                placeholder="Type Your Answer Here" />
+            <button type="submit" class="button submit-btn column is-four-fifths-mobile is-one-fifth-tablet">Submit</button>
+        </form>
+
         <div class="columns" id="answer-check">
         </div>
         <div class="columns">

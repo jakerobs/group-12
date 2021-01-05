@@ -16,7 +16,7 @@ console.log(categoryAnswer);
 
 //add value to end of clickedButton array to end game once all buttons are clicked
 clickedButtons = JSON.parse(localStorage.getItem("clickedButtons"));
-console.log(clickedButtons);
+
 //split clicked buttons list 
 clickedButtonsList = clickedButtons.split(',');
 

@@ -173,7 +173,7 @@ var endGame = function () {
     homeButtonEl.textContent = "Home";
     homeButtonEl.type = "submit";
     homeButtonEl.classList.add("button","avatar-btn","column","modal-btn");
-    homeButtonEl.setAttribute("href","./landingpage.html");
+    homeButtonEl.setAttribute("href","./index.html");
     //append button to button holder
     buttonHolderEl.appendChild(homeButtonEl);
 

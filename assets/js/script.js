@@ -159,6 +159,16 @@ var endGame = function () {
     modalEl.classList.add("modal")
     //get final score
     var finalScore = JSON.parse(localStorage.getItem("score"));
+    //save final score to new leaderboard array
+    leaderboard = JSON.parse(localStorage.getItem("leaderboard"));
+    if (leaderboard) {
+        leaderboard = leaderboard + "," + finalScore;
+        localStorage.setItem("leaderboard",JSON.stringify(leaderboard));
+    }
+    else {
+        leaderboard = finalScore;
+        localStorage.setItem("leaderboard",JSON.stringify(leaderboard));
+    }
     //create score element and add text
     var modalScoreEl = document.createElement("h3");
     modalScoreEl.textContent = "Final Score: " + finalScore;

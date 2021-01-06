@@ -3,56 +3,77 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trivia King</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
+    <title>Trivia Kings</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bungee+Outline&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
-    <main>
-        <!-- head font for page -->
-        <h1>Choose a Category</h1>
-
-        <!-- list of categories -->
-        <div id="category-1">
-            <h3 class="category-header" id="category">Category 1</h3>
-            <!-- difficulty levels -->
-            <button type="submit" class="btn btn-5th">5th grade</button>
-            <button type="submit" class="btn btn-4th">4th grade</button>
-            <button type="submit" class="btn btn-3th">3th grade</button>
-            <button type="submit" class="btn btn-2th">2th grade</button>
-            <button type="submit" class="btn btn-1th">1th grade</button>
+    <main id="end-game">
+        <div class="container">
+            <div class="level">
+                <!-- empty element to force score to right -->
+                <h4 class="level-left"></h4>
+                <!-- Current score of quiz -->
+                <h4 id="current-score" class="level-right margin-left">Score: 0</h4>
+            </div>
+        </div>
+        <hero class="hero">
+            <h1 class="hero-text">Trivia Kings</h1>
+        </hero>
+        <div class="columns">
+            <!-- head font for page -->
+            <h1 class="choose-category column">Choose a Category:</h1>
         </div>
 
-        <div id="category-2">
-            <h3 class="category-header" id="category">Category 2</h3>
-            <!-- difficulty levels -->
-            <button type="submit" class="btn btn-5th">5th grade</button>
-            <button type="submit" class="btn btn-4th">4th grade</button>
-            <button type="submit" class="btn btn-3th">3th grade</button>
-            <button type="submit" class="btn btn-2th">2th grade</button>
-            <button type="submit" class="btn btn-1th">1th grade</button>
-        </div>
+        <div class="columns">
+            <!-- list of categories -->
+            <div id="category-1 column">
+                <h3 class="category-header column" id="category-one"></h3>
+                <!-- difficulty levels -->
+                <button type="submit" id="one" class="button btn-5th column is-full-tablet is-four-fifths-mobile" data-clicked="one" data-difficulty="1000">1000 Points</button>
+                <button type="submit" id="two" class="button btn-4th column is-full-tablet is-four-fifths-mobile" data-clicked="two" data-difficulty="800">800 Points</button>
+                <button type="submit" id="three" class="button btn-3th column is-full-tablet is-four-fifths-mobile" data-clicked="three" data-difficulty="600">600 Points</button>
+                <button type="submit" id="four" class="button btn-2th column is-full-tablet is-four-fifths-mobile" data-clicked="four" data-difficulty="400">400 Points</button>
+                <button type="submit" id="five" class="button btn-1th column is-full-tablet is-four-fifths-mobile" data-clicked="five" data-difficulty="200">200 Points</button>
+            </div>
 
-        <div id="category-3">
-            <h3 class="category-header" id="category">Category 3</h3>
-            <!-- difficulty levels -->
-            <button type="submit" class="btn btn-5th">5th grade</button>
-            <button type="submit" class="btn btn-4th">4th grade</button>
-            <button type="submit" class="btn btn-3th">3th grade</button>
-            <button type="submit" class="btn btn-2th">2th grade</button>
-            <button type="submit" class="btn btn-1th">1th grade</button>
-        </div>
+            <div id="category-2 column">
+                <h3 class="category-header column" id="category-two"></h3>
+                <!-- difficulty levels -->
+                <button type="submit" id="six" class="button btn-5th column is-full-tablet is-four-fifths-mobile" data-clicked="six" data-difficulty="1000">1000 Points</button>
+                <button type="submit" id="seven" class="button btn-4th column is-full-tablet is-four-fifths-mobile" data-clicked="seven" data-difficulty="800">800 Points</button>
+                <button type="submit" id="eight" class="button btn-3th column is-full-tablet is-four-fifths-mobile" data-clicked="eight" data-difficulty="600">600 Points</button>
+                <button type="submit" id="nine" class="button btn-2th column is-full-tablet is-four-fifths-mobile" data-clicked="nine" data-difficulty="400">400 Points</button>
+                <button type="submit" id="ten" class="button btn-1th column is-full-tablet is-four-fifths-mobile" data-clicked="ten" data-difficulty="200">200 Points</button>
+            </div>
 
-        <div id="category-4">
-            <h3 class="category-header" id="category">Category 4</h3>
-            <!-- difficulty levels -->
-            <button type="submit" class="btn btn-5th">5th grade</button>
-            <button type="submit" class="btn btn-4th">4th grade</button>
-            <button type="submit" class="btn btn-3th">3th grade</button>
-            <button type="submit" class="btn btn-2th">2th grade</button>
-            <button type="submit" class="btn btn-1th">1th grade</button>
-            <div>
+            <div id="category-3 column">
+                <h3 class="category-header column" id="category-three"></h3>
+                <!-- difficulty levels -->
+                <button type="submit" id="eleven" class="button btn-5th column is-full-tablet is-four-fifths-mobile" data-clicked="eleven" data-difficulty="1000">1000 Points</button>
+                <button type="submit" id="twelve" class="button btn-4th column is-full-tablet is-four-fifths-mobile" data-clicked="twelve" data-difficulty="800">800 Points</button>
+                <button type="submit" id="thirteen" class="button btn-3th column is-full-tablet is-four-fifths-mobile" data-clicked="thirteen" data-difficulty="600">600 Points</button>
+                <button type="submit" id="fourteen" class="button btn-2th column is-full-tablet is-four-fifths-mobile" data-clicked="fourteen" data-difficulty="400">400 Points</button>
+                <button type="submit" id="fifteen" class="button btn-1th column is-full-tablet is-four-fifths-mobile" data-clicked="fifteen" data-difficulty="200">200 Points</button>
+            </div>
+
+            <div id="category-4 column">
+                <h3 class="category-header column" id="category-four"></h3>
+                <!-- difficulty levels -->
+                <button type="submit" id="sixteen" class="button btn-5th column is-full-tablet is-four-fifths-mobile" data-clicked="sixteen" data-difficulty="1000">1000 Points</button>
+                <button type="submit" id="seventeen" class="button btn-4th column is-full-tablet is-four-fifths-mobile" data-clicked="seventeen" data-difficulty="800">800 Points</button>
+                <button type="submit" id="eighteen" class="button btn-3th column is-full-tablet is-four-fifths-mobile" data-clicked="eighteen" data-difficulty="600">600 Points</button>
+                <button type="submit" id="nineteen" class="button btn-2th column is-full-tablet is-four-fifths-mobile" data-clicked="nineteen" data-difficulty="400">400 Points</button>
+                <button type="submit" id="twenty" class="button btn-1th column is-full-tablet is-four-fifths-mobile" data-clicked="twenty" data-difficulty="200">200 Points</button>
+            </div>
+        </div>
+        <div class="columns">
+            <a class="column" href="./landingpage.html">Return Home</a>
+        </div>
 
     </main>
 

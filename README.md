@@ -17,6 +17,8 @@ https://jakerobs.github.io/group-12/
 * When choosing to start a game, you have 4 categories with several questions listed underneath.
 * Upon picking a question, you have 30 seconds to answer it. 
 * Answering questions right will give you points, answering wrong will not give you any points.
+* At least attempt to answer every question to finish the game and recieve your score.
 
 ## Future Development
 * Add a GIPHY API for correct and wrong answers
+* Add quick play mode with fewer questions for arcade style play

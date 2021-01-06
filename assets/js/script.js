@@ -32,8 +32,7 @@ var categories = function () {
     });
 };
 
-//fetch info from http://jservice.io/api/"category"
-//take fetched information and update the quizpage
+//function to handle when the question buttons are clicked
 var gradeButtonClickHandler = function (event) {
 
     loadIds();
@@ -64,6 +63,7 @@ var gradeButtonClickHandler = function (event) {
     }
 };
 
+//function to mute buttons after they are clicked
 var muteButtonHandler = function (buttonNumber, event) {
     clickedButtons = JSON.parse(localStorage.getItem("clickedButtons"));
 
@@ -80,6 +80,7 @@ var muteButtonHandler = function (buttonNumber, event) {
     localStorage.setItem("clickedButtons", JSON.stringify(clickedButtons));
 };
 
+//function to handle passing the questions to the next page
 var questionHandler = function (id, difficulty) {
     //function to get question data from api
     fetch("http://jservice.io/api/clues?category=" + id + "&value=" + difficulty).then(function (response) {
@@ -153,6 +154,7 @@ var loadIds = function () {
     }
 };
 
+//function to end the game
 var endGame = function () {
     //create modal
     var modalEl = document.createElement("div");
@@ -201,6 +203,7 @@ var endGame = function () {
     document.querySelector("#end-game").appendChild(modalEl);
 };
 
+//create event listeners and attach them to the question buttons
 gradeButtonEl.forEach(function (el) {
     el.addEventListener("click", gradeButtonClickHandler);
 });

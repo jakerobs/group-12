@@ -8,6 +8,9 @@ https://jakerobs.github.io/group-12/
 
 ## Preview
 
+<img width="974" alt="Screen Shot 2021-01-05 at 5 18 19 PM" src="https://user-images.githubusercontent.com/73309832/103714086-05b12800-4f7b-11eb-8e2f-c2b612d2457b.png">
+
+<img width="1343" alt="Screen Shot 2021-01-05 at 5 18 40 PM" src="https://user-images.githubusercontent.com/73309832/103713824-7a379700-4f7a-11eb-8653-b2965a4e0416.png">
 
 ## Instructions
 * From the homepage, you can choose to start the game, view scores or choose an avatar. 

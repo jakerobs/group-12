@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia King</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bungee+Outline&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <main class="avatar-page">
+        <div class="container">
+            <!-- head font for page -->
+            <h1 class="hero-text main-header">Make Your Avatar</h1>
+            <!-- buttons to interact with page -->
+            <div class="columns">
+                <input id="get-input" class="start-btn button column is-one-fifth" type="text"
+                    placeholder="Your Name"></input>
+
+                <button id="get-avatar" class="avatar-btn button column is-one-fifth" type="submit"
+                    onclick="getName()">Get Avatar</button>
+            </div>
+            <div id="show-avatar">
+                <img id="myUrl" src="" />
+            </div>
+
+        </div>
+    </main>
+
+    <script type="text/javascript">
+
+        function getName() {
+            let nameInputBox = document.getElementById("get-input").value;
+
+            console.log(nameInputBox);
+            //fetchData(nameInputBox);
+            document.getElementById("myUrl").src = `https://robohash.org/${nameInputBox}`
+        }
+
+         
+
+            // function fetchData(pizza) {
+            //     fetch(`https://robohash.p.rapidapi.com/index.php?text=${pizza}`, {
+            //         "method": "GET",
+            //         "headers": {
+            //             "x-rapidapi-key": "619bfaf082msh55a3ef5d61cad54p14c7c5jsn56ec67221d25",
+            //             "x-rapidapi-host": "robohash.p.rapidapi.com"
+            //         }
+            //     })
+            //         .then(response => {
+            //             console.log(response);
+            //             //document.querySelector('#show-avatar').innerHTML = ;
+            //         })
+
+            //         .catch(err => {
+            //             console.error(err);
+            //         });
+            // }
+        
+    </script>
+
+    <!-- javascript link -->
+    <!--<script src="./assets/js/avatarscript.js"></script> -->
+</body>
+
+</html>

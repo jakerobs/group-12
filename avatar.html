@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <main class="avatar-page">
+    <main class="avatar-page" id="avatar-page">
         <div class="container">
             <!-- head font for page -->
             <h1 class="hero-text main-header">Make Your Avatar</h1>
@@ -40,6 +40,7 @@
 
         function getName() {
             let nameInputBox = document.getElementById("get-input").value;
+            localStorage.setItem("name",JSON.stringify(nameInputBox));
 
             console.log(nameInputBox);
             //fetchData(nameInputBox);

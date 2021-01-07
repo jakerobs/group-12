@@ -32,8 +32,7 @@ var categories = function () {
     });
 };
 
-//fetch info from http://jservice.io/api/"category"
-//take fetched information and update the quizpage
+//function to handle when the question buttons are clicked
 var gradeButtonClickHandler = function (event) {
 
     loadIds();
@@ -64,6 +63,7 @@ var gradeButtonClickHandler = function (event) {
     }
 };
 
+//function to mute buttons after they are clicked
 var muteButtonHandler = function (buttonNumber, event) {
     clickedButtons = JSON.parse(localStorage.getItem("clickedButtons"));
 
@@ -80,6 +80,7 @@ var muteButtonHandler = function (buttonNumber, event) {
     localStorage.setItem("clickedButtons", JSON.stringify(clickedButtons));
 };
 
+//function to handle passing the questions to the next page
 var questionHandler = function (id, difficulty) {
     //function to get question data from api
     fetch("http://jservice.io/api/clues?category=" + id + "&value=" + difficulty).then(function (response) {
@@ -153,12 +154,23 @@ var loadIds = function () {
     }
 };
 
+//function to end the game
 var endGame = function () {
     //create modal
     var modalEl = document.createElement("div");
     modalEl.classList.add("modal")
     //get final score
     var finalScore = JSON.parse(localStorage.getItem("score"));
+    //save final score to new leaderboard array
+    leaderboard = JSON.parse(localStorage.getItem("leaderboard"));
+    if (leaderboard) {
+        leaderboard = leaderboard + "," + finalScore;
+        localStorage.setItem("leaderboard",JSON.stringify(leaderboard));
+    }
+    else {
+        leaderboard = finalScore;
+        localStorage.setItem("leaderboard",JSON.stringify(leaderboard));
+    }
     //create score element and add text
     var modalScoreEl = document.createElement("h3");
     modalScoreEl.textContent = "Final Score: " + finalScore;
@@ -173,7 +185,7 @@ var endGame = function () {
     homeButtonEl.textContent = "Home";
     homeButtonEl.type = "submit";
     homeButtonEl.classList.add("button","avatar-btn","column","modal-btn");
-    homeButtonEl.setAttribute("href","./landingpage.html");
+    homeButtonEl.setAttribute("href","./index.html");
     //append button to button holder
     buttonHolderEl.appendChild(homeButtonEl);
 
@@ -191,6 +203,7 @@ var endGame = function () {
     document.querySelector("#end-game").appendChild(modalEl);
 };
 
+//create event listeners and attach them to the question buttons
 gradeButtonEl.forEach(function (el) {
     el.addEventListener("click", gradeButtonClickHandler);
 });

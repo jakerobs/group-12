@@ -153,25 +153,23 @@
     grid-template-columns: .5fr .5fr .5fr;
     padding-bottom: 30px;
     color: #2a9d8f;
+    padding-left: 275px;
 
 }
 
-.grid-container-1 {
-    display: grid;
-    grid-template-columns: .5fr .5fr .5fr;
-    padding-bottom: 30px;
-    padding-top: 35px;
-    color: #2a9d8f;
+.avatar {
+    width: 100px;
+    height: auto;
 }
 
-.leaders {
-    padding-left: 25%;
-    padding-right: 5%;
-   }
+
+
 
 .leaderboard-header {
     padding-top: 10vh;
 }
+
+
 
 @media screen and (max-width: 768px){
     .margin-left{

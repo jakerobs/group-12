@@ -116,6 +116,11 @@
 .avatar-btn{
     background-color: var(--secondary-color);
 }
+.clear-btn{
+    background-color: white;
+    margin-top: 20px;
+    top: 0px;
+}
 
 /* style quiz page */
 .qpage-category{

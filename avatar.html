@@ -40,6 +40,7 @@
 
         function getName() {
             let nameInputBox = document.getElementById("get-input").value;
+            localStorage.setItem("name",JSON.stringify(nameInputBox));
 
             console.log(nameInputBox);
             //fetchData(nameInputBox);

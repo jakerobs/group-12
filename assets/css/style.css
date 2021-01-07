@@ -3,8 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Bangers', cursive;
-
-
 }
 :root{
     --primary-color: #264653;
@@ -56,6 +54,11 @@
     width: auto;
     text-align: center;
     justify-content: center;
+    flex-wrap: wrap;
+}
+.disabled{
+    background-color: grey;
+    pointer-events: none;
 }
 
 /* style category headers on category page */
@@ -128,5 +131,69 @@
     margin-top: 1.5rem;
 }
 .submit-btn{
-    background-color: var(--secondary-color);
+    background-color: var(--fifth-color);
+}
+
+/* style end game modal */
+.modal{
+    display: flex;
+    position: absolute;
+    background-color: rgba(248, 248, 248, 0.9);
+    font-size: 40px;
+}
+.modal-btn{
+    margin-top: 10px;
+    padding: 12px 25px;
+}
+
+/* leaderboard styling*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: .5fr .5fr .5fr;
+    padding-bottom: 30px;
+    color: #2a9d8f;
+
+}
+
+.grid-container-1 {
+    display: grid;
+    grid-template-columns: .5fr .5fr .5fr;
+    padding-bottom: 30px;
+    padding-top: 35px;
+    color: #2a9d8f;
+}
+
+.leaders {
+    padding-left: 25%;
+    padding-right: 5%;
+   }
+
+.leaderboard-header {
+    padding-top: 10vh;
+}
+
+@media screen and (max-width: 768px){
+    .margin-left{
+        margin-left: 5px;
+    }
+    .qpage-category{
+        margin-top: 8vh;
+        font-size: 17px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .qpage-trivia-questions{
+        font-size: 18px;
+        padding-top: 0.25rem;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .answer-box,.submit-btn{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .column{
+        display: inline-block;
+    }
 }

@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GIF search</title>
-  </head>
-  <body>
-    <h1>Now let's add some options to our search</h1>
-    <div>Search term: <input type="text" id="searchTerm" value="Cats" /></div>
-    <div>
-      Rating:
-      <select name="rating" id="rating">
-        <option value="G">G</option>
-        <option value="PG">PG</option>
-        <option value="PG13">PG13</option>
-      </select>
-    </div>
-    <button onclick="myFunction()">Search!</button>
-    <div id="response-container"></div>
-    <script src="assets/js/script.js"></script>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
+    <title>Trivia Kings</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bungee+Outline&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <main class="main-page">
+        <div class="container">
+            <!-- head font for page -->
+            <h1 class="hero-text main-header is-mobile">Trivia Kings</h1>
+            <!-- buttons to interact with page -->
+            <div class="columns">
+                <a id="start-btn" class="start-btn button column is-four-fifths-mobile is-one-fifth-tablet" href="./category.html" type="submit">Start Game</a>
+                <a id="leaderboard-btn" class="leaderboard-btn button column is-four-fifths-mobile is-one-fifth-tablet" href="./leaderboard.html" type="submit">
+                        Leaderboard</a>
+                <a class="avatar-btn button column is-four-fifths-mobile is-one-fifth-tablet" href="./avatar.html" type="submit">Avatar</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- javascript link -->
+    <script src="./assets/js/landingpagescript.js"></script>
+</body>
+
 </html>

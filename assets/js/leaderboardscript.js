@@ -2,7 +2,7 @@
 leaderboard = JSON.parse(localStorage.getItem("leaderboard"));
 leaderboardArray = leaderboard.split(",");
 //this sorting method doesnt work right
-leaderboardArray.sort(function(a, b){return a - b});
+leaderboardArray.sort(function(a, b){return b - a});
 
 //add the items to the dom
 var leaderboardPopulator = function () {
@@ -20,9 +20,11 @@ var leaderboardPopulator = function () {
         nameEl.classList.add("name");
         nameEl.textContent = JSON.parse(localStorage.getItem("name"));
         //add avatar next
-        var avatarEl = document.createElement("div");
+        var avatarEl = document.createElement("img");
         avatarEl.classList.add("grid-child");
         avatarEl.classList.add("avatar");
+        avatarEl.src = `https://robohash.org/${"name"}`;
+        
     // add link to image here //////////////////////////////////////////////////
         //append name and then score to container
         containerEl.appendChild(nameEl);

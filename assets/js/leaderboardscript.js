@@ -23,6 +23,7 @@ var leaderboardPopulator = function () {
         var avatarEl = document.createElement("img");
         avatarEl.classList.add("grid-child");
         avatarEl.classList.add("avatar");
+        avatarEl.classList.add("center");
         avatarEl.src = `https://robohash.org/${"name"}`;
         
     // add link to image here //////////////////////////////////////////////////

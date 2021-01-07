@@ -5,7 +5,7 @@ var categories = function () {
     var min = Math.ceil(1);
     var max = Math.floor(18415);
     var result = Math.floor((Math.random() * (max - min)) + min);
-    fetch("http://jservice.io/api/categories?count=4&offset=" + result).then(function (response) {
+    fetch("https://jservice.io/api/categories?count=4&offset=" + result).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
                 //replace text data on categories page with new categories

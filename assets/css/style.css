@@ -152,10 +152,14 @@
     display: grid;
     grid-template-columns: .5fr .5fr .5fr;
     padding-bottom: 30px;
+    padding-top: 10px;
     color: #2a9d8f;
     text-align: center;
     margin: auto;
-    vertical-align: center;
+    border-bottom: 1px grey dashed;
+    font-size: 30px;
+    vertical-align: middle;
+    width: 80%;
 }
 .center {
     display: block;
@@ -172,8 +176,9 @@
 .leaderboard-header {
     padding-top: 10vh;
 }
-
-
+.grid-child{
+    margin: auto;
+}
 
 @media screen and (max-width: 768px){
     .margin-left{
@@ -197,5 +202,8 @@
     }
     .column{
         display: inline-block;
+    }
+    .grid-container {
+        font-size: 20px;
     }
 }

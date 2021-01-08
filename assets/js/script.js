@@ -83,7 +83,7 @@ var muteButtonHandler = function (buttonNumber, event) {
 //function to handle passing the questions to the next page
 var questionHandler = function (id, difficulty) {
     //function to get question data from api
-    fetch("http://jservice.io/api/clues?category=" + id + "&value=" + difficulty).then(function (response) {
+    fetch("https://jservice.io/api/clues?category=" + id + "&value=" + difficulty).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
                 if (!data.length) {

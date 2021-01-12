@@ -1,7 +1,13 @@
 //get leaderboard data and parse into array that is split and then sort by highest score
 leaderboard = JSON.parse(localStorage.getItem("leaderboard"));
+//only split leaderboard if there is more than one value in it
+if (leaderboard.length > 1){
 leaderboardArray = leaderboard.split(",");
-//this sorting method doesnt work right
+}
+else{
+    leaderboardArray = leaderboard;
+}
+//sort from hightest to lowest score
 leaderboardArray.sort(function(a, b){return b - a});
 
 //add the items to the dom

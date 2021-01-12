@@ -34,7 +34,7 @@ var leaderboardPopulator = function () {
         avatarEl.classList.add("grid-child");
         avatarEl.classList.add("avatar");
         avatarEl.classList.add("center");
-        avatarEl.src = "https://robohash.org/${" + name + "}";
+        avatarEl.src = `https://robohash.org/${name}`;
         //append name and then score to container
         containerEl.appendChild(nameEl);
         containerEl.appendChild(scoreEl);
